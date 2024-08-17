@@ -1,0 +1,34 @@
+﻿<Window x:Class="KlientPrir.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KlientPrir"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <!-- Placeholder for Username -->
+            <Grid Margin="0,0,0,10">
+                <TextBox x:Name="txtUsername" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" />
+                <TextBlock x:Name="txtUsernamePlaceholder" Text="Username" IsHitTestVisible="False"
+                           VerticalAlignment="Center" Margin="5,0,0,0" Foreground="Gray" />
+            </Grid>
+
+            <!-- Placeholder for Password -->
+            <Grid Margin="0,0,0,10">
+                <PasswordBox x:Name="txtPassword" LostFocus="PasswordBox_LostFocus" GotFocus="PasswordBox_GotFocus" />
+                <TextBlock x:Name="txtPasswordPlaceholder" Text="Password" IsHitTestVisible="False"
+                           VerticalAlignment="Center" Margin="5,0,0,0" Foreground="Gray" />
+            </Grid>
+
+            <Button x:Name="btnLogin" Content="Login" Click="BtnLogin_Click" Margin="0,0,0,10"/>
+            <ListBox x:Name="lstFiles" Height="150" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnUpload" Content="Upload" Click="BtnUpload_Click" Margin="0,0,10,0"/>
+                <Button x:Name="btnDownload" Content="Download" Click="BtnDownload_Click" Margin="0,0,10,0"/>
+                <Button x:Name="btnDelete" Content="Delete" Click="BtnDelete_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
