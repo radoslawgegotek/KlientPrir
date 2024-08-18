@@ -69,6 +69,28 @@ namespace KlientPrir
             await DeleteFile();
         }
 
+        private async void BtnReverse_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstFiles.SelectedItem is FileRecord selectedFile)
+            {
+                var response = await client.PostAsync($"https://localhost:7036/api/files/reverse/{selectedFile.Id}", null);
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("File reversed successfully!");
+                    await LoadFiles();
+                }
+                else
+                {
+                    MessageBox.Show("File reversal failed!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a file to reverse.");
+            }
+        }
+
+
         private async Task Login()
         {
             var loginModel = new { Username = txtUsername.Text, Password = txtPassword.Password };
