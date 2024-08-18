@@ -28,6 +28,7 @@
                 <Button x:Name="btnUpload" Content="Upload" Click="BtnUpload_Click" Margin="0,0,10,0"/>
                 <Button x:Name="btnDownload" Content="Download" Click="BtnDownload_Click" Margin="0,0,10,0"/>
 				<Button x:Name="btnReverse" Content="Reverse Text" Click="BtnReverse_Click" Margin="0,0,10,0"/>
+				<Button x:Name="btnFindLargestNumber" Content="Largest Number" Click="BtnFindLargestNumber_Click" Margin="0,0,10,0"/>
 				<Button x:Name="btnDelete" Content="Delete" Click="BtnDelete_Click"/>
 				
             </StackPanel>

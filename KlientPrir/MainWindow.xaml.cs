@@ -63,6 +63,32 @@ namespace KlientPrir
             await DeleteFile();
         }
 
+        private async void BtnFindLargestNumber_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstFiles.SelectedItem is FileRecord selectedFile)
+            {
+                var response = await client.PostAsync($"https://localhost:7036/api/files/largestnumber/{selectedFile.Id}", null);
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadFromJsonAsync<LargestNumberResult>();
+                    MessageBox.Show($"Largest number in the file is: {result.LargestNumber}");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to start largest number calculation.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a file from the list.");
+            }
+        }
+
+        public class LargestNumberResult
+        {
+            public int LargestNumber { get; set; }
+        }
+
         private async void BtnReverse_Click(object sender, RoutedEventArgs e)
         {
             if (lstFiles.SelectedItem is FileRecord selectedFile)
