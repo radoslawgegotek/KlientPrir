@@ -6,9 +6,6 @@ using System.Windows.Shapes;
 
 namespace KlientPrir
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private HttpClient client = new HttpClient();
@@ -16,7 +13,6 @@ namespace KlientPrir
         public MainWindow()
         {
             InitializeComponent();
-            // Set initial visibility
             UpdatePlaceholderVisibility();
         }
 
@@ -42,10 +38,8 @@ namespace KlientPrir
 
         private void UpdatePlaceholderVisibility()
         {
-            // Update Username placeholder visibility
             txtUsernamePlaceholder.Visibility = string.IsNullOrEmpty(txtUsername.Text) ? Visibility.Visible : Visibility.Collapsed;
 
-            // Update Password placeholder visibility
             txtPasswordPlaceholder.Visibility = string.IsNullOrEmpty(txtPassword.Password) ? Visibility.Visible : Visibility.Collapsed;
         }
 
